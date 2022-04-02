@@ -1,1 +1,237 @@
-/* You can add global styles to this file, and also import other style files */
+/*normalize*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #555;
+    font-family: Open Sans;
+    font-size: 1em;
+    height: 100vh;
+    font-weight: 400;
+}
+
+/* parte derecha de ingreso y egreso (valor + porcentaje)*/
+.derecha, .izquierda{
+    display: flex;
+    align-items: center;
+    gap: .75em;
+}
+
+.rojo { color: #FF5049 !important; }
+.rojofocus:focus { border: 1px solid #FF5049 !important; }
+
+.cabecero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    color: white;
+    background: url(assets/bg-pattern.png), linear-gradient(to left, #7b4397, rgba(0, 38, 255, 0.63));
+}
+
+/*caja cabacero*/
+.presupuesto {
+    min-width: 30%;
+    color: #fff;
+}
+
+/*titulo principal*/
+.presupuesto_titulo{
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 600;
+}
+
+/*saldo*/
+.presupuesto_valor {
+    font-weight: 300;
+    font-size: 3em;
+    text-align: center;
+    margin-top: .2em;
+    margin-bottom: .5em;
+    letter-spacing: .05em;
+}
+
+.presupuesto_ingreso,.presupuesto_egreso{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 4em;
+    padding: .75em;
+    border-radius: 10px;
+}
+
+/*caja ingresos*/
+.presupuesto_ingreso {
+    margin-bottom: 1.5em;
+    background-color: #28B9B5;
+}
+
+.presupuesto_egreso {
+    background-color: #FF5049;
+}
+
+.presupuesto_ingreso--texto,
+.presupuesto_egreso--texto {
+    font-size: 1em;
+    color: #fff;
+}
+
+.presupuesto_ingreso--valor,
+.presupuesto_egreso--valor {
+    letter-spacing: .1em;
+}
+
+.presupuesto_ingreso--porcentaje,
+.presupuesto_egreso--porcentaje {
+    font-size: .75em;
+}
+
+.agregar {
+    margin-top: 3em;
+}
+
+.agregar_contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.agregar_tipo {
+    width: 3.5em;
+    height: 2.5em;
+    border: 2px solid #e7e7e7;
+    border-radius: 3px;
+    font-size: 1.3em;
+    padding-left: .3em;
+    font-weight: 400;
+    transition: border 0.4s;
+}
+
+.agregar_descripcion,
+.agregar_valor {
+    border: 2px solid #e7e7e7;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.agregar_descripcion::placeholder, .agregar_valor::placeholder{
+    color: #999;
+}
+
+.agregar_descripcion { width: 25%;}
+.agregar_valor { width: 15%;}
+
+.agregar_btn {
+    margin-top: .2em;
+    font-size: 2.5em;
+    border: none;
+    color: #28B9B5;
+    cursor: pointer;
+}
+
+.agregar_btn:active { transform: translateY(2px); }
+
+.agregar_tipo:focus,
+.agregar_descripcion:focus,
+.agregar_valor:focus {
+    outline: none;
+    border: 2px solid #28B9B5;
+}
+
+.contenedor {
+    display: flex;
+    gap: 12em;
+    margin: 3em auto;
+    width: 70%;
+}
+
+.ingresos, .egresos {
+    width: 40%;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.ingreso_titulo { 
+    color: #28B9B5;
+    margin-bottom: 1em;
+}
+.egreso_titulo{ 
+    color: #FF5049; 
+    margin-bottom: 1em;
+}
+
+.elemento {
+    display: grid;
+    grid-template-columns: 1.5fr .05fr .1fr .1fr .1fr;
+    padding: 1em;
+}
+
+.elemento:first-child{border-top: .15em solid black }
+.elemento:nth-child(even){
+    border-top: .15em solid black;
+    border-bottom: .15em solid black;
+}
+.elemento:last-child{border-bottom: .15em solid black}
+
+.elemento_valor {
+    transition: transform 0.4s;
+    letter-spacing: .05em;
+}
+
+.elemento_simbolo{
+    transition: transform 0.4s;
+    font-weight: 800;
+}
+
+.simbolo_ingreso{
+    color: #28B9B5;
+}
+
+.simbolo_egreso{
+    color: #FF5049; 
+}
+
+.elemento_porcentaje {
+    margin-left: 1em;
+    transition: transform 0.4s;
+    font-size: .75em;
+    background-color: #FFDAD9;
+    padding: .2em;
+    border-radius: 5px;
+    width: 4em;
+    text-align: center;
+}
+
+.ingreso_valor{
+    color: #28B9B5;
+    font-weight: 500;
+}
+
+.egreso_valor,
+.egreso_porcentaje{
+    color: #FF5049;
+    font-weight: 500;
+}
+
+.elemento_eliminar--btn {
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.elemento_eliminar--btn:focus { outline: none; }
+.elemento_eliminar--btn:active { transform: translateY(2px); }
+
+.elemento:hover .elemento_eliminar--btn { display: block; }
+.elemento:hover .elemento_valor { transform: translateX(-1.5em); }
+.elemento:hover .elemento_porcentaje { transform: translateX(-1.5em); }
+.elemento:hover .elemento_simbolo { transform: translateX(-1.5em);}
