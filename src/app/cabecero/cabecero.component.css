@@ -1,0 +1,76 @@
+
+/* parte derecha de ingreso y egreso (valor + porcentaje)*/
+.derecha, .izquierda{
+    display: flex;
+    align-items: center;
+    gap: .75em;
+}
+
+.rojo { color: #FF5049 !important; }
+.rojofocus:focus { border: 1px solid #FF5049 !important; }
+
+.cabecero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    color: white;
+    background: url(../../assets/bg-pattern.png), linear-gradient(to left, #7b4397, rgba(0, 38, 255, 0.63));
+}
+
+/*caja cabacero*/
+.presupuesto {
+    min-width: 30%;
+    color: #fff;
+}
+
+/*titulo principal*/
+.presupuesto_titulo{
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 600;
+}
+
+/*saldo*/
+.presupuesto_valor {
+    font-weight: 300;
+    font-size: 3em;
+    text-align: center;
+    margin-top: .2em;
+    margin-bottom: .5em;
+    letter-spacing: .05em;
+}
+
+.presupuesto_ingreso,.presupuesto_egreso{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 4em;
+    padding: .75em;
+    border-radius: 10px;
+}
+
+/*caja ingresos*/
+.presupuesto_ingreso {
+    margin-bottom: 1.5em;
+    background-color: #28B9B5;
+}
+
+.presupuesto_egreso {
+    background-color: #FF5049;
+}
+
+.presupuesto_ingreso--texto,
+.presupuesto_egreso--texto {
+    font-size: 1em;
+    color: #fff;
+}
+
+.presupuesto_ingreso--valor,
+.presupuesto_egreso--valor {
+    letter-spacing: .1em;
+}
+
+.presupuesto_ingreso--porcentaje,
+.presupuesto_egreso--porcentaje {
+    font-size: .75em;
+}

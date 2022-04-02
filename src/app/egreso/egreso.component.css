@@ -1,0 +1,73 @@
+h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.egresos {
+    width: 27vw;
+}
+
+.egreso_titulo{ 
+    color: #FF5049; 
+    margin-bottom: 1em;
+}
+
+.simbolo_egreso{
+    color: #FF5049; 
+}
+
+.egreso_valor,
+.egreso_porcentaje{
+    color: #FF5049;
+    font-weight: 500;
+}
+
+
+.elemento {
+    display: grid;
+    grid-template-columns: 1.5fr .05fr .1fr .1fr .1fr;
+    padding: 1em;
+}
+
+.elemento:first-child{border-top: .15em solid black }
+.elemento:nth-child(even){
+    border-top: .15em solid black;
+    border-bottom: .15em solid black;
+}
+.elemento:last-child{border-bottom: .15em solid black}
+
+.elemento_valor {
+    transition: transform 0.4s;
+    letter-spacing: .05em;
+}
+
+.elemento_simbolo{
+    transition: transform 0.4s;
+    font-weight: 800;
+}
+
+.elemento_porcentaje {
+    margin-left: 1em;
+    transition: transform 0.4s;
+    font-size: .75em;
+    background-color: #FFDAD9;
+    padding: .2em;
+    border-radius: 5px;
+    width: 4em;
+    text-align: center;
+}
+
+.elemento_eliminar--btn {
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.elemento_eliminar--btn:focus { outline: none; }
+.elemento_eliminar--btn:active { transform: translateY(2px); }
+
+.elemento:hover .elemento_eliminar--btn { display: block; }
+.elemento:hover .elemento_valor { transform: translateX(-1.5em); }
+.elemento:hover .elemento_porcentaje { transform: translateX(-1.5em); }
+.elemento:hover .elemento_simbolo { transform: translateX(-1.5em);}
