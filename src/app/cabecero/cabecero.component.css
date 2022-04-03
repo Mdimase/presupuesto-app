@@ -26,7 +26,7 @@
 
 /*titulo principal*/
 .presupuesto_titulo{
-    font-size: 1.8em;
+    font-size: 2em;
     text-align: center;
     font-weight: 600;
 }
@@ -47,6 +47,7 @@
     height: 4em;
     padding: .75em;
     border-radius: 10px;
+    font-size: 1.2em;
 }
 
 /*caja ingresos*/

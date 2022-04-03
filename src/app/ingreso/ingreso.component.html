@@ -6,7 +6,7 @@
         <div class="elemento" *ngFor="let i of ingresos">
             <div class="elemento_descripcion">{{i.descripcion}}</div>
             <div class="elemento_simbolo simbolo_ingreso">+ </div>
-            <div class="elemento_valor ingreso_valor">{{i.valor}}</div>
+            <div class="elemento_valor ingreso_valor">{{i.valor | currency:'USD':'$':'1.2-2'}}</div>
             <div class="elemento_eliminar">
                 <button class="elemento_eliminar--btn">
                     <i class="ion-ios-close-outline" (click)="eliminarRegistro(i)"></i>

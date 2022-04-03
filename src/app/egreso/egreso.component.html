@@ -6,8 +6,8 @@
         <div class="elemento" *ngFor="let e of egresos">
             <div class="elemento_descripcion">{{e.descripcion}}</div>
             <div class="elemento_simbolo simbolo_egreso">- </div>
-            <div class="elemento_valor egreso_valor">{{e.valor}}</div>
-            <div class="elemento_porcentaje">{{getPorcentaje(e)}} %</div>
+            <div class="elemento_valor egreso_valor">{{e.valor | currency:'USD':'$':'1.2-2'}}</div>
+            <div class="elemento_porcentaje">{{getPorcentaje(e)|percent}}</div>
             <div class="elemento_eliminar">
                 <button class="elemento_eliminar--btn">
                     <i class="ion-ios-close-outline" (click)="eliminarEgreso(e)"></i>
