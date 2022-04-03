@@ -10,4 +10,17 @@ export class IngresoService{
     getIngresos():Ingreso[]{
         return this.ingresos;
     }
+
+    getIngresoTotal():number{
+        let suma:number = 0;
+        for(let ingreso of this.ingresos){
+          suma += ingreso.valor;
+        }
+        return suma;
+    }
+
+    eliminarIngreso(ingreso:Ingreso):void{
+      const indice:number = this.ingresos.indexOf(ingreso);
+      this.ingresos.splice(indice,1);
+    }
 }

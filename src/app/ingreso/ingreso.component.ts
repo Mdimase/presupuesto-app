@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingreso } from './ingreso.model';
+import { IngresoService } from './ingresoService.service';
 
 @Component({
   selector: 'app-ingreso',
   templateUrl: './ingreso.component.html',
   styleUrls: ['./ingreso.component.css']
 })
-export class IngresoComponent implements OnInit {
+export class IngresoComponent{
 
-  constructor() { }
+  ingresos:Ingreso[];
 
-  ngOnInit(): void {
+  constructor(private ingresoService:IngresoService){
+    this.ingresos = this.ingresoService.getIngresos();
+  }
+
+  eliminarRegistro(ingreso:Ingreso):void{
+    this.ingresoService.eliminarIngreso(ingreso);
   }
 
 }

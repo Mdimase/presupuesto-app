@@ -30,10 +30,12 @@ h2 {
 }
 
 .elemento:first-child{border-top: .15em solid black }
+
 .elemento:nth-child(even){
     border-top: .15em solid black;
     border-bottom: .15em solid black;
 }
+
 .elemento:last-child{border-bottom: .15em solid black}
 
 .elemento_valor {

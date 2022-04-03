@@ -3,13 +3,13 @@
         <h2 class="ingreso_titulo">INGRESOS</h2>
     </div>
     <div id="lista-ingresos" class="lista_ingresos">
-        <div class="elemento">
-            <div class="elemento_descripcion"></div>
+        <div class="elemento" *ngFor="let i of ingresos">
+            <div class="elemento_descripcion">{{i.descripcion}}</div>
             <div class="elemento_simbolo simbolo_ingreso">+ </div>
-            <div class="elemento_valor ingreso_valor"></div>
+            <div class="elemento_valor ingreso_valor">{{i.valor}}</div>
             <div class="elemento_eliminar">
                 <button class="elemento_eliminar--btn">
-                    <i class="ion-ios-close-outline"></i>
+                    <i class="ion-ios-close-outline" (click)="eliminarRegistro(i)"></i>
                 </button>
             </div>
         </div>
