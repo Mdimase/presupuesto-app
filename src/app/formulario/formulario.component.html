@@ -1,4 +1,4 @@
-<form id="form">
+<form id="form" (ngSubmit)="f.form.valid && agregar()" #f="ngForm">
     <div class="agregar">
         <div class="agregar_contenedor">
             <select id="tipo" class="agregar_tipo" [ngClass]="{red__focus: tipo === 'E'}" (change)="tipoOperacion($event)">
@@ -9,7 +9,7 @@
             class="agregar_descripcion" [ngClass]="{red__focus: tipo === 'E'}" placeholder="Agregar Descripcion" required>
             <input type="number" id="valor" name="valor" [(ngModel)]="valorInput" 
             class="agregar_valor" [ngClass]="{red__focus: tipo === 'E'}" placeholder="Agregar Valor" step="any" required>
-            <button type="submit" class="agregar_btn" [ngClass]="{red: tipo === 'E'}" id="agregar-btn" (click)="agregar()">
+            <button type="submit" class="agregar_btn" [ngClass]="{red: tipo === 'E'}" id="agregar-btn">
                 <i class="ion-ios-checkmark-outline"></i>
             </button>
         </div>
