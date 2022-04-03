@@ -23,4 +23,8 @@ export class EgresoService{
       const indice:number = this.egresos.indexOf(egreso);
       this.egresos.splice(indice,1);
     }
+
+    agregarEgreso(egreso:Egreso):void{
+      this.egresos.push(egreso);
+    }
 }
