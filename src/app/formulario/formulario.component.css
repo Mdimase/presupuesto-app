@@ -52,3 +52,12 @@
     outline: none;
     border: 2px solid #28B9B5;
 }
+
+.red__focus:focus{
+    outline: none;
+    border: 2px solid #FF5049;
+}
+
+.red{
+    color: #FF5049;
+}
